@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import Name from '../Name/Name';
 
-
-const Status = ({statuses, creditHourRemaining,  totalHour}) => {
+const Status = ({statuses, creditHourRemaining,  totalHour, totalPrice}) => {
     return (
         <div className="card bg-base-100">
             <h2>{statuses.length}</h2>
@@ -14,14 +13,11 @@ const Status = ({statuses, creditHourRemaining,  totalHour}) => {
                     {
                         statuses.map(status => <Name key={status.id} status={status}></Name>)
                     }
-                    {/* <li className="text-course-light text-base font-normal">1 Introduction to c programming</li>
-                    <li className="text-course-light text-base font-normal">2 Introduction to C++ for DSA</li>
-                    <li className="text-course-light text-base font-normal">3 Software Engineering</li> */}
                 </ul>
                 <hr />
                 <h3 className="text-status-light font-medium text-base">Total Credit Hour : {totalHour}</h3>
                 <hr />
-                <h3 className="text-status-light font-semibold text-base">Total Price : 48000 USD</h3>
+                <h3 className="text-status-light font-semibold text-base">Total Price : {totalPrice} USD</h3>
                 
             </div>
         </div>

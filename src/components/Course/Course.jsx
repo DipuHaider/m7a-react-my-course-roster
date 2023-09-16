@@ -7,9 +7,6 @@ const Course = ({course, handleAddToStatus}) => {
 
     return (
         <div className="course">
-            
-            {/* <p>Price: {price}</p>
-            <button onClick={() => handleAddToCart(bottle)}>Purchase</button> */}
             <div className="card bg-base-100 shadow-xl rounded-lg h-full">
                 <figure><img className="p-3 rounded-lg" src={img} alt={title} /></figure>
                 <div className="card-body p-3 text-left space-y-4">

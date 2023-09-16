@@ -12,26 +12,33 @@ const Courses = () => {
     const [statuses, setStatuses] = useState([]);
     const [creditHourRemaining, setCreditHourRemaining] = useState(20);
     const [totalHour, setTotalHour] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(48000);
 
     const handleAddToStatus =  course => {
         const isExist = statuses.find((item) => item.id == course.id );
 
         let count = course.credit;
+        let countPrice = course.price;
 
         if (isExist) {
             return toast("Course Name Already Exist!!");
         } else {
             statuses.forEach((item) => {
                 count = count + item.credit;
+                countPrice = countPrice + item.price;
             });
 
             const totalRemaining = 20 - count;
+            const totalRemainingPrice= 48000 - countPrice;
 
             if (count > 20){
                 return toast("Course credit hour is over 20hrs.!!");
+            } else if(countPrice > 48000) {
+                return toast("Course Price is over $48000 !!"); 
             } else {
                 setTotalHour(count);
                 setCreditHourRemaining(totalRemaining);
+                setTotalPrice(totalRemainingPrice);
                 setStatuses([...statuses, course]);
             }
         }
@@ -56,7 +63,7 @@ const Courses = () => {
                     </div>
                 </div>
                 <div className="flex flex-col w-1/4">
-                    <Status statuses={statuses} creditHourRemaining={creditHourRemaining} totalHour={totalHour} ></Status>
+                    <Status statuses={statuses} creditHourRemaining={creditHourRemaining} totalHour={totalHour} totalPrice={totalPrice}></Status>
                     <ToastContainer />
                 </div>
             </div>
