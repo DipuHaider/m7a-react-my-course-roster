@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { FiDollarSign, FiBookOpen } from "react-icons/fi";
 import {IconContext} from "react-icons";
 
-const Course = ({course}) => {
+const Course = ({course, handleAddToStatus}) => {
     const{title, img, details, price, credit} = course;
 
     return (
@@ -26,7 +26,7 @@ const Course = ({course}) => {
                         </IconContext.Provider>
                     </div>
                     <div className="card-actions w-full">
-                        <button className="btn btn-wide text-white text-lg font-semibold bg-course-blue hover:bg-white hover:text-course-blue">Select</button>
+                        <button onClick={() => handleAddToStatus(course)} className="btn btn-wide text-white text-lg font-semibold bg-course-blue hover:bg-white hover:text-course-blue">Select</button>
                     </div>
                 </div>
             </div>
@@ -36,6 +36,7 @@ const Course = ({course}) => {
 
 Course.propTypes = {
     course: PropTypes.object.isRequired,
+    handleAddToStatus: PropTypes.func.isRequired,
 }
 
 export default Course;
