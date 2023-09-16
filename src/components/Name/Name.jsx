@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Name = ({status}) => {
+const Name = ({status, counter}) => {
     const {title} = status;
 
     return (
         <>
-            <li className="text-course-light text-base font-normal">{title}</li>
+            <li className="text-course-light text-base font-normal">{counter} {title}</li>
         </>
     );
 };

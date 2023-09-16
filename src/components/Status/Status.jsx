@@ -4,14 +4,13 @@ import Name from '../Name/Name';
 const Status = ({statuses, creditHourRemaining,  totalHour, totalPrice}) => {
     return (
         <div className="card bg-base-100">
-            <h2>{statuses.length}</h2>
             <div className="card-body text-left p-5">
                 <h2 className="text-lg text-course-blue font-bold leading-7">Credit Hour Remaining {creditHourRemaining} hr</h2>
                 <hr />
                 <h2 className="text-xl text-course-dark font-bold">Course Name</h2>
                 <ul>
                     {
-                        statuses.map(status => <Name key={status.id} status={status}></Name>)
+                        statuses.map((status, idx) => <Name key={status.id} status={status} counter={idx + 1}></Name>)
                     }
                 </ul>
                 <hr />

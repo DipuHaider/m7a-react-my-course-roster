@@ -1,8 +1,8 @@
-# React + Vite
+# Course Registration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Three main Features are:
 
-Currently, two official plugins are available:
+- Fetching data from Json file and shown in card dynamically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User can select the courses, Selected courses are shown in an ordered list with index number in Status section in right. If One course is selected more than once then show a toast with message.
+- Selected Courses total hour is shown after Courses name along with course total prices and Remaining hours is shown before Course name section. If Remaining Course hours are less than 0 OR total Course hours are more than 20 then show a toast with message. Additionally, Selected Course price is shown in last and if Remaining Course prices are more than 48000 then show a toast with message.
