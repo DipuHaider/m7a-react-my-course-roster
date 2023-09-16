@@ -1,7 +1,7 @@
 const Header = () => {
     return (
-        <div className="container mx-auto">
-            <div className="navbar bg-base-100 my-12">
+        <div className="container mx-auto bg-course-bg">
+            <div className="navbar my-12">
                 <div className="navbar-start">
                     {/* <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost btn-circle">
@@ -15,7 +15,7 @@ const Header = () => {
                     </div> */}
                 </div>
                 <div className="navbar-center">
-                    <h2 className='text-3xl font-bold text-course-blue'>Course Registration</h2>
+                    <h2 className='text-3xl font-bold text-course-dark'>Course Registration</h2>
                 </div>
                 <div className="navbar-end">
                     {/* <button className="btn btn-ghost btn-circle">
