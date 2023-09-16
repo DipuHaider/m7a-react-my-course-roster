@@ -8,6 +8,7 @@ export default {
         "course-blue": "#2F80ED",
         "course-dark": "#1C1B1B",
         "course-light": "#1B1B1B99",
+        "status-light": "#1B1B1BCC",
       },
     },
   },

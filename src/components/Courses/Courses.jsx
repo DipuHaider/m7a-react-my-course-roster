@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Course from "../Course/Course";
-import './Courses.css';
+import Status from "../Status/Status";
 
 const Courses = () => {
 
@@ -25,15 +25,7 @@ const Courses = () => {
                     </div>
                 </div>
                 <div className="flex flex-col w-1/4">
-                    <div className="card bg-base-100">
-                        <div className="card-body">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
+                    <Status></Status>
                 </div>
             </div>
         </div>
