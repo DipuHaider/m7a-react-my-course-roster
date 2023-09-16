@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import Name from '../Name/Name';
 
 
-const Status = ({statuses}) => {
+const Status = ({statuses, creditHourRemaining,  totalHour}) => {
     return (
         <div className="card bg-base-100">
             <h2>{statuses.length}</h2>
             <div className="card-body text-left p-5">
-                <h2 className="text-lg text-course-blue font-bold leading-7">Credit Hour Remaining 20 hr</h2>
+                <h2 className="text-lg text-course-blue font-bold leading-7">Credit Hour Remaining {creditHourRemaining} hr</h2>
                 <hr />
                 <h2 className="text-xl text-course-dark font-bold">Course Name</h2>
                 <ul>
@@ -19,7 +19,7 @@ const Status = ({statuses}) => {
                     <li className="text-course-light text-base font-normal">3 Software Engineering</li> */}
                 </ul>
                 <hr />
-                <h3 className="text-status-light font-medium text-base">Total Credit Hour : 0</h3>
+                <h3 className="text-status-light font-medium text-base">Total Credit Hour : {totalHour}</h3>
                 <hr />
                 <h3 className="text-status-light font-semibold text-base">Total Price : 48000 USD</h3>
                 

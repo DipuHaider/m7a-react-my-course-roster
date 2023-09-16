@@ -8,24 +8,32 @@ const Courses = () => {
 
     const [courses, setCourses] = useState([]);
     const [statuses, setStatuses] = useState([]);
-    const [creditHourRemaining, setCreditHourRemaining] = useState(0);
+    const [creditHourRemaining, setCreditHourRemaining] = useState(20);
+    const [totalHour, setTotalHour] = useState(0);
 
     const handleAddToStatus =  course => {
-        // console.log(course)
         const isExist = statuses.find((item) => item.id == course.id );
+
+        let count = course.credit;
+
         if (isExist) {
-            alert("already exist");
+            return alert("already exist");
         } else {
-            setStatuses([...statuses, course]);
+            statuses.forEach((item) => {
+                count = count + item.credit;
+            });
+
+            const totalRemaining = 20 - count;
+
+            if (count > 20){
+                return alert("credit hour over 20hrs.")
+            } else {
+                setTotalHour(count);
+                setCreditHourRemaining(totalRemaining);
+                setStatuses([...statuses, course]);
+            }
         }
-
-        // const newStatuses= [...statuses, course];
-        // setStatuses(newStatuses);
     }
-
-    // const handleCreditHourRemaining = timeRemaining => {
-    //     console.log(timeRemaining)
-    // };
 
     useEffect(() => {
         fetch('courses.json').then(res => res.json()).then(data => setCourses(data));
@@ -46,7 +54,7 @@ const Courses = () => {
                     </div>
                 </div>
                 <div className="flex flex-col w-1/4">
-                    <Status statuses={statuses} ></Status>
+                    <Status statuses={statuses} creditHourRemaining={creditHourRemaining} totalHour={totalHour} ></Status>
                 </div>
             </div>
         </div>
