@@ -19,7 +19,7 @@ const Status = ({statuses}) => {
                     <li className="text-course-light text-base font-normal">3 Software Engineering</li> */}
                 </ul>
                 <hr />
-                <h3 className="text-status-light font-medium text-base">Total Credit Hour : 13</h3>
+                <h3 className="text-status-light font-medium text-base">Total Credit Hour : 0</h3>
                 <hr />
                 <h3 className="text-status-light font-semibold text-base">Total Price : 48000 USD</h3>
                 

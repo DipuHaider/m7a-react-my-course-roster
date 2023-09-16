@@ -8,12 +8,24 @@ const Courses = () => {
 
     const [courses, setCourses] = useState([]);
     const [statuses, setStatuses] = useState([]);
+    const [creditHourRemaining, setCreditHourRemaining] = useState(0);
 
     const handleAddToStatus =  course => {
         // console.log(course)
-        const newStatuses= [...statuses, course];
-        setStatuses(newStatuses);
+        const isExist = statuses.find((item) => item.id == course.id );
+        if (isExist) {
+            alert("already exist");
+        } else {
+            setStatuses([...statuses, course]);
+        }
+
+        // const newStatuses= [...statuses, course];
+        // setStatuses(newStatuses);
     }
+
+    // const handleCreditHourRemaining = timeRemaining => {
+    //     console.log(timeRemaining)
+    // };
 
     useEffect(() => {
         fetch('courses.json').then(res => res.json()).then(data => setCourses(data));
@@ -34,7 +46,7 @@ const Courses = () => {
                     </div>
                 </div>
                 <div className="flex flex-col w-1/4">
-                    <Status statuses={statuses}></Status>
+                    <Status statuses={statuses} ></Status>
                 </div>
             </div>
         </div>
@@ -42,7 +54,8 @@ const Courses = () => {
 };
 
 Courses.propTypes = {
-    handleAddToStatus: PropTypes.func
+    handleAddToStatus: PropTypes.func,
+    handleCreditHourRemaining: PropTypes.func
 }
 
 export default Courses;
