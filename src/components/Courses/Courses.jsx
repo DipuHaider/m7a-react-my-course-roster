@@ -3,6 +3,8 @@ import { useState } from "react";
 import Course from "../Course/Course";
 import Status from "../Status/Status";
 import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Courses = () => {
 
@@ -17,7 +19,7 @@ const Courses = () => {
         let count = course.credit;
 
         if (isExist) {
-            return alert("already exist");
+            return toast("Course Name Already Exist!!");
         } else {
             statuses.forEach((item) => {
                 count = count + item.credit;
@@ -26,7 +28,7 @@ const Courses = () => {
             const totalRemaining = 20 - count;
 
             if (count > 20){
-                return alert("credit hour over 20hrs.")
+                return toast("Course credit hour is over 20hrs.!!");
             } else {
                 setTotalHour(count);
                 setCreditHourRemaining(totalRemaining);
@@ -55,6 +57,7 @@ const Courses = () => {
                 </div>
                 <div className="flex flex-col w-1/4">
                     <Status statuses={statuses} creditHourRemaining={creditHourRemaining} totalHour={totalHour} ></Status>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
